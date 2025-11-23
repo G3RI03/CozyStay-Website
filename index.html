@@ -22,6 +22,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <link rel="stylesheet" href="/css/style.css">
   <link rel="icon" type="image/jpg" href="/image/favlogo.jpg">
+  
 </head>
 
 <style>
@@ -661,6 +662,22 @@
   .service-section h2 {
     font-size: 1.5rem;
   }
+  .map-container {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%; /* 16:9 ratio */
+  height: 0;
+  overflow: hidden;
+}
+
+.map-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
 }
 
 /* Landscape Mode for Mobile */
@@ -683,15 +700,22 @@
 
 
 
-
-
 </style>
 <body>
     <!--Navbar-->
 <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
   <div class="container">
     <!-- Brand -->
-    <a class="navbar-brand text-dark" href="#">CozyStay Hotel</a>
+    <a class="navbar-brand text-dark d-flex align-items-center  fs-3" href="#">
+      CozyStay Hotel
+      <span class="ms-2 d-flex">
+        <i class="bi bi-star-fill text-warning me-1"></i>
+        <i class="bi bi-star-fill text-warning me-1"></i>
+        <i class="bi bi-star-fill text-warning me-1"></i>
+        <i class="bi bi-star-fill text-warning me-1"></i>
+        <i class="bi bi-star-fill text-warning"></i>
+      </span>
+    </a>
 
     <!-- Toggler for mobile -->
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
@@ -842,8 +866,7 @@
 <!--Header of Find a Room-->
 
 <div class="container mt-5">
-    <h2 class="display-5 font-weight-bold mb-3">Check Our Rooms</h2>
-
+  <h2 class="display-5 fw-bold text-center mb-3">Check Our Rooms</h2>
 </div>
 <!--Find a Room-->
 <section class="room">
@@ -922,7 +945,9 @@
 <!--Header of Scalet-->
 
 <div class="container mt-5">
-    <h2 class="display-5 font-weight-bold mb-3">Room & Rates</h2>
+    <h2 class="display-5 fw-bold text-center mb-3">Room & Rates</h2>
+</div>
+
 
 <!--Choose ur Scalet-->
 <section class="scalet">
@@ -1104,6 +1129,9 @@ The two signature suites have individual layouts, with one having a separate liv
                                 <img src="image/pool3.jpg" alt="Hotel Room">
                             </div>
 
+
+
+                            
 <!--About section-->
 <section class="py-5 bg-light">
   <div class="container">
@@ -1222,10 +1250,10 @@ The two signature suites have individual layouts, with one having a separate liv
     <h2 class="text-center mb-4">Our Location</h2>
 
     <div class="row">
-      <div class="col-md-12">
+      <div class="col-12">
         <div class="map-container" style="border-radius: 10px; overflow: hidden;">
           <iframe 
-            src="YOUR_GOOGLE_MAPS_IFRAME_LINK_HERE"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2748.680034302021!2d7.751857976836266!3d46.02071397109917!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x478f3e58706c9afd%3A0xcf9a7e24419ffaf6!2sZen%20Zermatt%2C%20Steckenstrasse%204%2C%203920%20Zermatt%2C%20Switzerland!5e0!3m2!1sen!2s!4v1700000000000"
             width="100%" 
             height="450" 
             style="border:0;" 
@@ -1239,18 +1267,22 @@ The two signature suites have individual layouts, with one having a separate liv
 
   </div>
 </section>
+
+<hr class="border-dark">
    <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <div class="row">
                 <div class="col-md-4">
                     <h5>Contact Information</h5>
+                    <hr class="border-dark">
                     <p><i class="fas fa-map-marker-alt"></i> 123 Mountain Road, Alpine Valley</p>
                     <p><i class="fas fa-phone"></i> +41 22 345 67 88</p>
                     <p><i class="fas fa-envelope"></i> info@cozystay.com</p>
                 </div>
                 <div class="col-md-4">
                     <h5>Quick Links</h5>
+                    <hr class="border-dark">
                     <a href="#">About Us</a>
                     <a href="#">Rooms & Suites</a>
                     <a href="#">Services</a>
@@ -1259,6 +1291,7 @@ The two signature suites have individual layouts, with one having a separate liv
                 </div>
                 <div class="col-md-4">
                     <h5>Follow Us</h5>
+                    <hr class="border-dark">
                     <div class="social-links">
                         <a href="#"><i class="fab fa-facebook"></i></a>
                         <a href="#"><i class="fab fa-instagram"></i></a>
@@ -1268,8 +1301,9 @@ The two signature suites have individual layouts, with one having a separate liv
                 </div>
             </div>
             <nav aria-label="...">
+              
             
-            <hr style="border-color: rgba(255, 255, 255, 0.2); margin: 30px 0;">
+            <hr style="border-dark: rgba(37, 145, 97, 0.2); margin: 50px 0;">
             <div class="text-center">
                 <p>&copy; 2025 CozyStay Mountain. All rights reserved.</p>
             </div>
