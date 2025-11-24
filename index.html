@@ -20,7 +20,7 @@
    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.8.2/css/lightbox.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  
   <link rel="stylesheet" href="/css/style.css">
   <link rel="icon" type="image/jpg" href="/image/favlogo.jpg">
    
@@ -264,6 +264,76 @@
     @keyframes spin {
       from { transform: rotate(0deg); }
       to { transform: rotate(360deg); }
+    }
+    /*Profile icon*/
+    .profile-dropdown {
+      min-width: 240px;
+      border: none;
+      border-radius: 12px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+      padding: 8px 0;
+      margin-top: 12px;
+    }
+
+    .profile-dropdown .dropdown-header {
+      padding: 12px 20px;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      color: #6c757d;
+      text-transform: uppercase;
+      border-bottom: 1px solid #e9ecef;
+      margin-bottom: 4px;
+    }
+
+    .profile-dropdown .dropdown-item {
+      padding: 10px 20px;
+      font-size: 14px;
+      color: #495057;
+      transition: all 0.2s ease;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .profile-dropdown .dropdown-item i {
+      font-size: 16px;
+      color: #6c757d;
+      width: 20px;
+    }
+
+    .profile-dropdown .dropdown-item:hover {
+      background-color: #f8f9fa;
+      color: #007bff;
+      padding-left: 24px;
+    }
+
+    .profile-dropdown .dropdown-item:hover i {
+      color: #007bff;
+    }
+
+    .profile-dropdown .dropdown-divider {
+      margin: 4px 0;
+      border-top-color: #e9ecef;
+    }
+
+    .profile-dropdown .dropdown-item.logout {
+      color: #dc3545;
+      margin-top: 4px;
+      border-top: 1px solid #e9ecef;
+    }
+
+    .profile-dropdown .dropdown-item.logout i {
+      color: #dc3545;
+    }
+
+    .profile-dropdown .dropdown-item.logout:hover {
+      background-color: #fff5f5;
+      color: #c82333;
+    }
+
+    .profile-dropdown .dropdown-item.logout:hover i {
+      color: #c82333;
     }
 /*Hero*/
 .hero-photo-section {
@@ -988,87 +1058,93 @@
 </style>
 <body>
     <!--Navbar-->
-<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
-  <div class="container">
-    <!-- Brand -->
-     <a class="navbar-brand" href="#" >
-                    COZYSTAY Hotel
-                    <span class="star-rating font-size: 1.5rem; font-weight: 600;">★★★★★</span>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+    <div class="container">
+      <!-- Brand -->
+      <a class="navbar-brand" href="#" >
+        COZYSTAY Hotel
+        <span class="star-rating" style="font-size: 1.5rem; font-weight: 600;">★★★★★</span>
+      </a>
 
+      <!-- Toggler for mobile -->
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Navbar links and search -->
+      <div class="collapse navbar-collapse justify-content-end" id="navbarContent">
+
+        <!-- Right Links -->
+        <ul class="navbar-nav">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">Home</a>
+            <div class="dropdown-menu">
+              <a class="dropdown-item" href="#room">Rooms & Suites</a>
+              <a class="dropdown-item" href="#">Room & Rates</a>
+              <a class="dropdown-item" href="#">Services</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#">Contact</a>
+            </div>
+          </li>
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">About</a>
+            <div class="dropdown-menu">
+              <a class="dropdown-item" href="#">Our Story</a>
+              <a class="dropdown-item" href="#">Our Team</a>
+              <a class="dropdown-item" href="#">Gallery</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#">Awards & Recognition</a>
+            </div>
+          </li>
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">Services</a>
+            <div class="dropdown-menu">
+              <a class="dropdown-item" href="#">Spa & Wellness</a>
+              <a class="dropdown-item" href="#">Dining & Restaurants</a>
+              <a class="dropdown-item" href="#">Tours & Activities</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#">Special Packages</a>
+            </div>
+          </li>
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">Contact</a>
+            <div class="dropdown-menu">
+              <a class="dropdown-item" href="#">Book a Room</a>
+              <a class="dropdown-item" href="#">Customer Support</a>
+              <a class="dropdown-item" href="#">Location</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#">Careers</a>
+            </div>
+          </li>
+
+                <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">
+              <i class="bi bi-person" style="font-size: 1.5rem;"></i>
+            </a>
+            <div class="dropdown-menu dropdown-menu-right profile-dropdown">
+              <h6 class="dropdown-header">Account</h6>
+              <a class="dropdown-item" href="profile.html">
+                <i class="bi bi-person-circle"></i>
+                Profile
               </a>
+              <a class="dropdown-item" href="#">
+                <i class="bi bi-gear"></i>
+                Settings
+              </a>
+              <a class="dropdown-item logout" href="#">
+                <i class="bi bi-box-arrow-right"></i>
+                Log Out
+              </a>
+            </div>
+          </li>
+        </ul>
 
-    <!-- Toggler for mobile -->
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <!-- Navbar links and search -->
-    <div class="collapse navbar-collapse" id="navbarContent">
-
-      <!-- Right Links -->
-      <ul class="navbar-nav ml-auto">
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">Home</a>
-          <div class="dropdown-menu">
-            <a class="dropdown-item" href="#room">Rooms & Suites</a>
-            <a class="dropdown-item" href="#">Room & Rates</a>
-            <a class="dropdown-item" href="#">Services</a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">Contact</a>
-          </div>
-        </li>
-
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">About</a>
-          <div class="dropdown-menu">
-            <a class="dropdown-item" href="#">Our Story</a>
-            <a class="dropdown-item" href="#">Our Team</a>
-            <a class="dropdown-item" href="#">Gallery</a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">Awards & Recognition</a>
-          </div>
-        </li>
-
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">Services</a>
-          <div class="dropdown-menu">
-            <a class="dropdown-item" href="#">Spa & Wellness</a>
-            <a class="dropdown-item" href="#">Dining & Restaurants</a>
-            <a class="dropdown-item" href="#">Tours & Activities</a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">Special Packages</a>
-          </div>
-        </li>
-
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">Contact</a>
-          <div class="dropdown-menu">
-            <a class="dropdown-item" href="#">Book a Room</a>
-            <a class="dropdown-item" href="#">Customer Support</a>
-            <a class="dropdown-item" href="#">Location</a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">Careers</a>
-          </div>
-        </li>
-
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">
-            <i class="bi bi-person" style="font-size: 1.5rem;"></i>
-          </a>
-          <div class="dropdown-menu dropdown-menu-right">
-            <h6 class="dropdown-header">Account</h6>
-            <a class="dropdown-item" href="profile.html" >Profile</a>
-            
-                            
-            <a class="dropdown-item" href="#">Settings</a>
-            <a class="dropdown-item" href="#">Log Out</a>
-          </div>
-        </li>
-      </ul>
-
+      </div>
     </div>
-  </div>
-</nav>
+  </nav>
 
 <!--Hero Section-->
 
@@ -1469,12 +1545,13 @@ The two signature suites have individual layouts, with one having a separate liv
                             <div class="carousel-item active">
                                 <img src="image/pool.jpg" alt="Pool">
                             </div>
-                            <div class="carousel-item">
+                              <div class="carousel-item">
                                 <img src="image/pool2.jpg" alt="Spa">
                             </div>
                             <div class="carousel-item">
                                 <img src="image/pool3.jpg" alt="Wellness">
                             </div>
+                            
                         </div>
                         
                         <!-- Controls -->
@@ -1539,8 +1616,8 @@ The two signature suites have individual layouts, with one having a separate liv
       <div class="col-md-4">
         <div class="card h-100 shadow-sm">
           <div class="card-body">
-            
-            <h5 class="card-title">Free Wi-Fi <i class="bi bi-wifi fs-3 mb-3"></i></h5>
+            <i class="bi bi-wifi fs-3 mb-3"></i>
+            <h5 class="card-title">Free Wi-Fi</h5>
             <p class="card-text">Enjoy fast and reliable Wi-Fi throughout the hotel. 
               Whether you're working, streaming, or staying connected with loved ones, our high-speed internet ensures a seamless online experience.</p>
           </div>
@@ -1550,7 +1627,8 @@ The two signature suites have individual layouts, with one having a separate liv
       <div class="col-md-4">
         <div class="card h-100 shadow-sm">
           <div class="card-body">
-            <h5 class="card-title">Swimming Pool <i class="bi bi-water fs-3 mb-3"></i> </h5>
+            <i class="bi bi-water fs-3 mb-3"></i>
+            <h5 class="card-title">Swimming Pool </h5>
             <p class="card-text">Relax and unwind in our indoor heated swimming pool. Designed for comfort and calm, it’s the perfect place to refresh your body and enjoy a peaceful atmosphere.</p>
           </div>
         </div>
@@ -1559,7 +1637,8 @@ The two signature suites have individual layouts, with one having a separate liv
       <div class="col-md-4">
         <div class="card h-100 shadow-sm">
           <div class="card-body">
-            <h5 class="card-title">Room Services  <i class="bi bi-bell fs-3 mb-3"></i></h5>
+            <i class="bi bi-bell fs-3 mb-3"></i>
+            <h5 class="card-title">Room Services </h5>
             <p class="card-text">Experience convenience with our 24/7 room service. From meals and refreshments to essential amenities, we deliver everything you need right to your doorstep.</p>
           </div>
         </div>
@@ -1571,7 +1650,8 @@ The two signature suites have individual layouts, with one having a separate liv
       <div class="col-md-4">
         <div class="card h-100 shadow-sm">
           <div class="card-body">
-            <h5 class="card-title">Free Parking<i class="bi bi-p-circle fs-3 mb-3"></i></h5>
+            <i class="bi bi-p-circle fs-3 mb-3"></i>
+            <h5 class="card-title">Free Parking</h5>
             <p class="card-text">We offer secure, complimentary parking for all our guests. Your vehicle stays safe while you enjoy a stress-free stay with easy and convenient access.</p>
           </div>
         </div>
@@ -1580,7 +1660,8 @@ The two signature suites have individual layouts, with one having a separate liv
       <div class="col-md-4">
         <div class="card h-100 shadow-sm">
           <div class="card-body">
-            <h5 class="card-title">Restaurant <i class="bi bi-r-circle fs-3 mb-3"></i> </h5>
+            <i class="bi bi-r-circle fs-3 mb-3"></i>
+            <h5 class="card-title">Restaurant </h5>
             <p class="card-text">Indulge in delicious meals at our on-site restaurant. We serve a variety of freshly prepared dishes in a warm and welcoming environment, perfect for breakfast, lunch, or dinner.</p>
           </div>
         </div>
@@ -1589,7 +1670,8 @@ The two signature suites have individual layouts, with one having a separate liv
       <div class="col-md-4">
         <div class="card h-100 shadow-sm">
           <div class="card-body">
-            <h5 class="card-title">Gym  <i class="bi bi-heart-pulse fs-3 mb-3"></i></h5>
+            <i class="bi bi-heart-pulse fs-3 mb-3"></i>
+            <h5 class="card-title">Gym </h5>
             <p class="card-text">Stay fit during your stay in our fully equipped gym. Featuring modern machines and free weights, it’s designed to support both light workouts and serious training sessions.</p>
           </div>
         </div>
@@ -1667,21 +1749,21 @@ The two signature suites have individual layouts, with one having a separate liv
   </div>
 </section>
 
-<hr class="border-dark">
+
    <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <div class="row">
-                <div class="col-md-4">
+                <div class="col-md-4 fw">
                     <h5>Contact Information</h5>
-                    <hr class="border-dark">
+                    
                     <p><i class="fas fa-map-marker-alt"></i> 123 Mountain Road, Alpine Valley</p>
                     <p><i class="fas fa-phone"></i> +41 22 345 67 88</p>
                     <p><i class="fas fa-envelope"></i> info@cozystay.com</p>
                 </div>
                 <div class="col-md-4">
                     <h5>Quick Links</h5>
-                    <hr class="border-dark">
+                    
                     <a href="#">About Us</a>
                     <a href="#">Rooms & Suites</a>
                     <a href="#">Services</a>
@@ -1690,7 +1772,7 @@ The two signature suites have individual layouts, with one having a separate liv
                 </div>
                 <div class="col-md-4">
                     <h5>Follow Us</h5>
-                    <hr class="border-dark">
+                    
                     <div class="social-links">
                         <a href="#"><i class="fab fa-facebook"></i></a>
                         <a href="#"><i class="fab fa-instagram"></i></a>
@@ -1731,6 +1813,7 @@ The two signature suites have individual layouts, with one having a separate liv
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.2/js/bootstrap.min.js"></script>
+
 <!-- Flatpickr JS for date picker -->
 
 <script>
